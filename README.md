@@ -9,8 +9,7 @@ this repo.
 # Training Project 3
 
 Pointers, references, operator overloading, build systems, test-driven
-development, and the Big Three. Three-indexed (fourth) project in the core
-training sequence.
+development, and the Big Three. Third project in the core training sequence.
 
 Trainees will implement a `Matrix` class supporting basic matrix
 operations. Trainees will make use of test-driven development and practice
