@@ -63,7 +63,7 @@ Project source files, containing the bulk of `project3`'s implementation.
 
 Contains:
 * Starter files
-	* `./src/2DArray.hpp`
+	* `./src/Array2D.hpp`
 	* `./src/Matrix.hpp`
 	* `./src/CMakeLists.txt`
 
