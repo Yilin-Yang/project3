@@ -28,4 +28,11 @@
 
   **Pointers**						-		`./pointers.md`
 
+
+**Containers**						-		`./containers.md`
+
+  **Native Arrays**					-		`./native_arrays.md`
+
+  **STL Containers**				-		`./stl_containers.md`
+
 **Operator Overloading**			-		`./operator_overloading.md`
