@@ -18,6 +18,11 @@ project(project3)					# the name of the project
 # Tell CMake where it can find its `.cmake` files.
 #	Usually, these are just scripts telling CMake where to find certain
 #	libraries.
+
+# (^That directory is empty/doesn't exist, since CMake can find Eigen3 and Boost
+#  without any issues. This is necessary if you're using libraries that CMake
+#  can't find in the usual places.)
+
 set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH};${PROJECT_SOURCE_DIR}/cmake")
 #   ^ Set this variable to...
 #                      ^ ...the current value of CMAKE_MODULE_PATH...
