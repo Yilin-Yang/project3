@@ -1,6 +1,7 @@
 #ifndef MAAV_PROJECT_3_ARRAY_2D_HPP
 #define MAAV_PROJECT_3_ARRAY_2D_HPP
 
+#include <cstdlib>	// size_t
 #include <utility> 	// std::pair
 
 /**
@@ -40,6 +41,16 @@ class Array2D
 {
 	/**
 	 * @brief Type alias for the container that represents an Array2D's size.
+	 * @detail This is one of the ways to get around the prohibition on putting
+	 * 		`using` statements in a header file.
+	 *
+	 * 		Because this `using` statement is located inside of Array2D, its
+	 * 		scope only covers the Array2D class. That means that anybody who
+	 * 		`include`s this header won't be able to use this type alias by
+	 * 		accident.
+	 *
+	 * 		They also won't be able to use it on purpose
+	 * 		(e.g. 'Array2D::SizePair`), because this alias isn't `public:`.
 	 */
 	using SizePair = std::pair<size_t, size_t>;
 
