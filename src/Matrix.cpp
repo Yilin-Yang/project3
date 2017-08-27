@@ -60,6 +60,11 @@ Matrix Matrix::operator*(const Matrix& rhs) const
 	// ADD IMPLEMENTATION HERE
 }
 
+Matrix Matrix::operator/(double divisor) const
+{
+	// ADD IMPLEMENTATION HERE
+}
+
 Matrix Matrix::divide(const Matrix& rhs) const
 {
 	// ADD IMPLEMENTATION HERE

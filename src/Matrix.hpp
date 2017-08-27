@@ -206,6 +206,18 @@ public:
 	Matrix operator*(const Matrix& rhs) const;
 
 	/**
+	 * @brief Divide this matrix by a scalar and return the quotient.
+	 * @detail Passing the following two arguments...
+	 * 				[1	2]		2.0
+	 * 				[3	4]
+	 *
+	 * 			...into this function returns the following matrix.
+	 * 				[0.5	1.0]
+	 * 				[1.5	2.0]
+	 */
+	Matrix operator/(double divisor) const;
+
+	/**
 	 * @brief Return the element-wise quotient of this Matrix with the other.
 	 * @detail Checks whether the matrices have the same size. Throws an
 	 * 		exception (`std::runtime_error`) if the sizes do not match.
