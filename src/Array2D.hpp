@@ -69,87 +69,87 @@ public:
 	 * @{
 	 */
 
-	/**
-	 * @brief Deep-copy the elements of `to_copy` into a new `Array2D`.
-	 * @detail This is a copy constructor.
-	 *
-	 * 		This is the constructor that allows you to:
-	 * 		<ul>
-	 * 		<li> Pass Array2D instances as function arguments that are not
-	 * 			 `const ref`s
-	 * 		<li> Directly construct Array2D's that are duplicates of another
-	 * 			 Array2D by doing: `Array2D copy{another_array_2d};`
-	 * 		</ul>
-	 *
-	 * 		The default (i.e. `... = default;`) copy constructor performs a
-	 * 		"shallow copy". It takes the member variables of the other instance
-	 * 		`to_copy` and copies all of its member variables into a new instance
-	 * 		of that class.
-	 *
-	 * 		This is an issue if your class members include pointers.
-	 * 		Copy-constructing a pointer gives you, in the end, _two_ pointers
-	 * 		that point to the _same location in memory._
-	 *
-	 * 		This means that, if you were to use the default copy constructor
-	 * 		with Array2D, modifications to the _copy_ of Array2D would also
-	 * 		affect the original!
-	 *
-	 * 		You have to deep-copy `to_copy`'s elements instead.
-	 *
-	 * 		To do this, you have to allocate a new `contents` array for the new
-	 * 		Array2D and copy over each element.
-	 */
-	Array2D(const Array2D& to_copy);
+		/**
+		 * @brief Deep-copy the elements of `to_copy` into a new `Array2D`.
+		 * @detail This is a copy constructor.
+		 *
+		 * 		This is the constructor that allows you to:
+		 *		<ul>
+		 *		<li> Pass Array2D instances as function arguments that are not
+		 *		`const ref`s
+		 *		<li> Directly construct Array2D's that are duplicates of
+		 * 		another Array2D by doing: `Array2D copy{another_array_2d};`
+		 *		</ul>
+		 *
+		 * 		The default (i.e. `... = default;`) copy constructor performs a
+		 * 		"shallow copy". It takes the member variables of the other
+		 * 		instance `to_copy` and copies all of its member variables into
+		 * 		a new instance of that class.
+		 *
+		 * 		This is an issue if your class members include pointers.
+		 * 		Copy-constructing a pointer gives you, in the end, _two_
+		 * 		pointers that point to the _same location in memory._
+		 *
+		 * 		This means that, if you were to use the default copy
+		 * 		constructor with Array2D, modifications to the _copy_ of
+		 * 		Array2D would also affect the original!
+		 *
+		 * 		You have to deep-copy `to_copy`'s elements instead.
+		 *
+		 * 		To do this, you have to allocate a new `contents` array for the
+		 * 		new Array2D and copy over each element.
+		 */
+		Array2D(const Array2D& to_copy);
 
-	/**
-	 * @brief Assign the contents of `assign_from` to this Array2D.
-	 * @detail This is an assignment operator.
-	 *
-	 * 		This is the function that allows you to do this:
-	 * 				// ... code stuff ...
-	 * 				Array2D an_array; // calls default constructor
-	 * 				an_array = array_from_above; // declared somewhere above
-	 *
-	 * 		Which is functionally identical to:
-	 * 				Array2D an_array = array_from_above;
-	 *
-	 * 		The default assignment operator performs a "shallow copy". See
-	 * 		the documentation for Array2D's copy constructor for an explanation
-	 * 		of why this is bad.
-	 */
-	Array2D& operator=(const Array2D& assign_from);
+		/**
+		 * @brief Assign the contents of `assign_from` to this Array2D.
+		 * @detail This is an assignment operator.
+		 *
+		 * 		This is the function that allows you to do this:
+		 * 				// ... code stuff ...
+		 * 				Array2D an_array; // calls default constructor
+		 * 				an_array = array_from_above; // declared somewhere above
+		 *
+		 * 		Which is functionally identical to:
+		 * 				Array2D an_array = array_from_above;
+		 *
+		 * 		The default assignment operator performs a "shallow copy". See
+		 * 		the documentation for Array2D's copy constructor for an
+		 * 		explanation of why this is bad.
+		 */
+		Array2D& operator=(const Array2D& assign_from);
 
-	/**
-	 * @brief Destroy this Array2D.
-	 * @detail This is a destructor.
-	 *
-	 * 		This is the function that gets called in situations like...
-	 * 				delete ptr_to_dynamically_allocated_array2d;
-	 *
-	 * 		...or, more commonly, in situations like...
-	 * 				void someFunction()
-	 * 				{
-	 *					Array2D an_array;
-	 *
-	 *					// do stuff with array
-	 *
-	 *					return;
-	 * 				}
-	 *
-	 * 		...after you've hit the end of the function.
-	 *
-	 * 		`an_array` no longer exists once the function exits. C++ calls
-	 * 		`delete` on the memory address of `an_array` once you've exited
-	 * 		the body of that function.
-	 *
-	 *		The default destructor `delete`s each of Array2D's member variables.
-	 *		If that member variable was a pointer to dynamically-allocated
-	 *		memory, the `delete` destroys the pointer, but leaves all of that
-	 *		memory still there.
-	 *
-	 *		This is what's called a memory leak.
-	 */
-	~Array2D();
+		/**
+		 * @brief Destroy this Array2D.
+		 * @detail This is a destructor.
+		 *
+		 * 		This is the function that gets called in situations like...
+		 * 				delete ptr_to_dynamically_allocated_array2d;
+		 *
+		 * 		...or, more commonly, in situations like...
+		 * 				void someFunction()
+		 * 				{
+		 *					Array2D an_array;
+		 *
+		 *					// do stuff with array
+		 *
+		 *					return;
+		 * 				}
+		 *
+		 * 		...after you've hit the end of the function.
+		 *
+		 * 		`an_array` no longer exists once the function exits. C++ calls
+		 * 		`delete` on the memory address of `an_array` once you've exited
+		 * 		the body of that function.
+		 *
+		 *		The default destructor `delete`s each of Array2D's member
+		 *		variables.  If that member variable was a pointer to
+		 *		dynamically-allocated memory, the `delete` destroys the
+		 *		pointer, but leaves all of that memory still there.
+		 *
+		 *		This is what's called a memory leak.
+		 */
+		~Array2D();
 
 	/**
 	 * @}

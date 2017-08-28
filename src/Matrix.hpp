@@ -54,6 +54,43 @@ public:
 	Matrix(size_t num_rows, size_t num_cols);
 
 	/**
+	 * @addtogroup BIG_THREE The Big Three
+	 * @brief You have to implement these when working with dynamic memory.
+	 * @detail **LEARN:** Would you still have to implement this if Matrix
+	 * 		"had-an" Array2D object rather than a pointer to an Array2D that
+	 * 		exists on the heap?
+	 * @{
+	 */
+
+		/**
+		 * @brief Deep-copy the members of `to_copy` into a new Matrix.
+		 * @detail See the copy constructor for Array2D--as well as the
+		 * 		project documentation--for more information on copy
+		 * 		construction.
+		 */
+		Matrix(const Matrix& to_copy);
+
+		/**
+		 * @brief Assign the contents of `assign_from` into this Matrix.
+		 * @detail See the assignment operator for Array2D--as well as the
+		 * 		project documentation--for more information on what the
+		 * 		assignment operator does and needs to do.
+		 */
+		Matrix& operator=(const Matrix& assign_from);
+
+		/**
+		 * @brief Destroy this Matrix.
+		 * @detail See the destructor for Array2D, as well as the project
+		 * 		documentation--for more information on the destructor does/needs
+		 * 		to do.
+		 */
+		~Matrix();
+
+	/**
+	 * @}
+	 */
+
+	/**
 	 * @brief Resize this Matrix to have the given number of rows and columns.
 	 * @return A reference to this matrix (i.e. a dereferenced `this`
 	 * 		pointer, obtained with `(*this)`).
