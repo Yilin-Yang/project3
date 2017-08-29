@@ -1,0 +1,76 @@
+"===============================================================================
+"                   Maker Settings for Syntastic and Neomake
+"===============================================================================
+" syntastic and neomake are plugins for (neo)vim that allow you to 'lint' a file
+" written in a programming language. You can use them to check over your code
+" for syntax errors, unused variables, etc. without leaving that terminal window.
+"
+" They both work by compiling your code in g++, then opening a 'quickfix
+" window' populated with all of the warnings and errors produced during
+" compilation. If it doesn't include your project directories while this
+" happens, syntastic and neomake will throw a 'fatal error' telling you that
+" the given header file wasn't found.
+"
+" This file fixes that.
+"
+"-------------------------------------------------------------------------------
+" To use, install the localvimrc plugin (https://github.com/embear/vim-localvimrc),
+" and copy this file into the project03 root folder into a file named
+" `.lvimrc`.
+"
+" Delete the settings for the syntax checker that you don't use.
+
+"-------------------------------------------------------------------------------
+"                              Neomake Settings
+"-------------------------------------------------------------------------------
+" NOTE:	Despite its name, Neomake can work with both neovim and 'regular' vim.
+"-------------------------------------------------------------------------------
+let g:neomake_cpp_gcc_maker = {
+    \ 'exe': 'g++',
+    \ 'args': [
+        \ '-fsyntax-only',
+        \ '-Wall',
+        \ '-Wextra',
+        \ '-pedantic',
+        \ '--std=c++14',
+        \ '-I.',
+        \ '-I..',
+        \ '-I../src/',
+        \ '-I../bin/',
+        \ '-Isrc/',
+        \ '-Ibin/',
+        \ '-isystem',
+            \ '/usr/include/eigen3',
+    \ ],
+\ }
+
+"-------------------------------------------------------------------------------
+"                            Syntastic Settings
+"-------------------------------------------------------------------------------
+
+" These are the default settings recommended by syntastic's documentation.
+" If you want to use them, uncomment them by deleting the quotation marks at
+" the start of each line.
+"
+" You can also run this from the vim command line:
+" 		:62,69s/"//
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+
+let g:syntastic_cpp_compiler_options = "-Wall "
+	\+ "-Wextra "
+	\+ "-pedantic "
+	\+ "--std=c++14 "
+	\+ "-I. "
+	\+ "-I../src/ "
+	\+ "-I../bin/ "
+	\+ "-Isrc/ "
+	\+ "-Ibin "
+	\+ "-isystem /usr/include/eigen3"
+
