@@ -1,7 +1,7 @@
 #ifndef MAAV_PROJECT_3_HELPERS_HPP
 #define MAAV_PROJECT_3_HELPERS_HPP
 
-#include "Matrix.hpp"
+#include "src/Matrix.hpp"
 
 /**
  * @addtogroup HELPERS Helper Functions
