@@ -10,6 +10,36 @@ Matrix::Matrix(size_t num_rows, size_t num_cols)
 	// ADD IMPLEMENTATION HERE
 }
 
+Matrix::Matrix(const Matrix& to_copy)
+{
+	// ADD IMPLEMENTATION HERE
+}
+
+Matrix& Matrix::operator=(const Matrix& assign_from)
+{
+	// ADD IMPLEMENTATION HERE
+}
+
+Matrix::~Matrix()
+{
+	// ADD IMPLEMENTATION HERE
+}
+
+const SizePair& Matrix::size() const
+{
+	// ADD IMPLEMENTATION HERE
+}
+
+double& Matrix::operator()(size_t row, size_t col)
+{
+	// ADD IMPLEMENTATION HERE
+}
+
+double Matrix::operator()(size_t row, size_t col) const
+{
+	// ADD IMPLEMENTATION HERE
+}
+
 Matrix& resize(size_t num_rows, size_t num_cols)
 {
 	// ADD IMPLEMENTATION HERE

@@ -33,6 +33,9 @@
  */
 class Matrix
 {
+
+	using SizePair = std::pair<size_t, size_t>;
+
 public:
 
 	/**
@@ -85,6 +88,31 @@ public:
 		 * 		to do.
 		 */
 		~Matrix();
+
+	/**
+	 * @}
+	 */
+
+	/**
+	 * @addtogroup ACCESSORS Accessor Functions
+	 * @brief Function for getting or modifying Matrix members.
+	 * @{
+	 */
+
+		/**
+	 	 * @brief Return this Matrix's size as a `(num_rows, num_columns)` pair.
+		 */
+		const SizePair& size() const;
+
+		/**
+	 	 * @brief Allow modificiation of a specific element in this Matrix.
+		 */
+		double& operator()(size_t row, size_t col);
+
+		/**
+	 	 * @brief Allow read-only access to a specific element in this Matrix.
+		 */
+		double operator()(size_t row, size_t col) const;
 
 	/**
 	 * @}
