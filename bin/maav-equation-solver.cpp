@@ -69,15 +69,18 @@ bool solveEquationOne()
 	// right-hand side
 	Matrix a{1, 1};		// coefficient matrix
 	a(1, 1) = 2;
+	cout << "\t\tMatrix A:\n" << a << "\n";
 
 	// left-hand side
 	Matrix b{1, 1};		// "other-side" matrix
 	b(1, 1) = 6;
+	cout << "\t\tMatrix B:\n" << b << "\n";
 
-	Matrix answer{1, 1};
-	answer(1, 1) = 3;
+	Matrix x_ans{1, 1};
+	x_ans(1, 1) = 3;
+	cout << "\t\tAnswer:\n" << x_ans << "\n";
 
-	return b.divide(a) == answer;
+	return b.divide(a) == x_ans;
 }
 
 /**
@@ -106,17 +109,21 @@ bool solveEquationTwo()
 	// right-hand side
 	Matrix a{1, 1};		// coefficient matrix
 	a(1, 1) = 2;
+	cout << "\t\tMatrix A:\n" << a << "\n";
 
 	Matrix c{1, 1};		// constants matrix
 	c(1, 1) = 1;
+	cout << "\t\tMatrix c:\n" << c << "\n";
 
 	// left-hand side
 	Matrix b{1, 1};		// "other-side" matrix
 	b(1, 1) = 7;
+	cout << "\t\tMatrix B:\n" << b << "\n";
 
 	// correct answer
 	Matrix answer{1, 1};
 	answer(1, 1) = 3;
+	cout << "\t\tAnswer:\n" << answer << "\n";
 
 	// Attempt to solve the equation.
 	b = b - c;
@@ -158,16 +165,19 @@ bool solveEquationThree()
 	a(1, 2) = 9;
 	a(2, 1) = 5;
 	a(2, 2) = 2;
+	cout << "\t\tMatrix A:\n" << a << "\n";
 
 	// left-hand side
 	Matrix b{2, 1};		// "other-side" matrix
 	b(1, 1) = 7;
 	b(2, 1) = 3;
+	cout << "\t\tMatrix B:\n" << b << "\n";
 
 	// correct answer
 	Matrix x_ans{2, 1};
 	x_ans(1, 1) = 13.0 / 37;
 	x_ans(2, 1) = 23.0 / 37;
+	cout << "\t\tAnswer:\n" << x_ans << "\n";
 
 	// Attempt to solve the equation.
 	return isApproxEqual(b * a.inverse(), x_ans);
@@ -226,6 +236,7 @@ bool solveEquationFour()
 	a_vals(2, 2) = 2;
 
 	a = Matrix{a_vals};	// copy construct a_vals and then assign
+	cout << "\t\tMatrix A:\n" << a << "\n";
 
 	// If the copy-constructor did what it was supposed to, this shouldn't
 	// affect `a` in any way.
@@ -244,11 +255,13 @@ bool solveEquationFour()
 	b(1, 2) = 3;
 
 	b = b.transpose();	// flip it into a column vector
+	cout << "\t\tMatrix B:\n" << b << "\n";
 
 	// correct answer
 	Matrix x_ans{2, 1};
 	x_ans(1, 1) = 13.0 / 37;
 	x_ans(2, 1) = 23.0 / 37;
+	cout << "\t\tAnswer:\n" << x_ans << "\n";
 
 	// Attempt to solve the equation.
 	return isApproxEqual(b * a.inverse(), x_ans);

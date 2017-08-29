@@ -295,23 +295,6 @@ public:
 	 */
 	bool operator!=(const Matrix& rhs) const;
 
-	/**
-	 * @brief Insert the matrix into the given output stream.
-	 * @detail Given a matrix `A`...
-	 * 				[1	2]
-	 * 				[3	4]
-	 *
-	 *		...the function call...
-	 *				std::cout << A << std::endl;
-	 *
-	 *		...would print...
-	 * 				[1	2]
-	 * 				[3	4]
-	 *
-	 * 		...to the terminal window, followed by _one_ newline character.
-	 */
-	std::ostream& operator<<(std::ostream& os) const;
-
 private:
 
 	/**
@@ -334,5 +317,31 @@ private:
 	 */
 
 };
+
+/**
+ * @brief Insert the matrix into the given output stream.
+ * @detail Given a matrix `A`...
+ * 				[1	2]
+ * 				[3	4]
+ *
+ *		...the function call...
+ *				std::cout << A << std::endl;
+ *
+ *		...would print...
+ * 				[1	2]
+ * 				[3	4]
+ *
+ * 		...to the terminal window. The closing bracket (`]`) is followed
+ * 		by _one_ newline character.
+ *
+ * 		If this call is followed by:
+ * 				std::cout << "foobar" << std::endl;
+ *
+ * 		...the terminal would display:
+ * 				[1	2]
+ * 				[3	4]
+ * 				foobar
+ */
+std::ostream& operator<<(std::ostream& os, const Matrix& mat);
 
 #endif

@@ -5,6 +5,8 @@
 using std::ostream;
 using std::runtime_error;
 
+using SizePair = std::pair<size_t, size_t>;
+
 Matrix::Matrix(size_t num_rows, size_t num_cols)
 {
 	// ADD IMPLEMENTATION HERE
@@ -90,7 +92,7 @@ bool Matrix::operator!=(const Matrix& rhs) const
 	// ADD IMPLEMENTATION HERE
 }
 
-ostream& Matrix::operator<<(ostream& os) const
+ostream& operator<<(ostream& os, const Matrix& mat)
 {
 	// ADD IMPLEMENTATION HERE
 }
