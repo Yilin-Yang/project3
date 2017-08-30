@@ -1,6 +1,10 @@
-# LEARN:	What happens if you comment this out?
+# LEARN:	What happens if you comment this line out?
+find_package(Eigen3)
+
 include_directories(
-	${PROJECT_SOURCE_DIR}/src
+	${PROJECT_SOURCE_DIR}
+	#${PROJECT_SOURCE_DIR}/src	# How is this different from the line above?
+	${Eigen3_SOURCE_DIR}
 )
 
 #---------------------------------------------------------------------
