@@ -213,7 +213,8 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   # See:
   #	https://cmake.org/Wiki/CMake/Testing_With_CTest
   #	`./docs/cmake.md`
-  #	`./docs/test_cases_and_boost.md`
+  #	`./docs/test_driven_development.md`
+  #	`./docs/boost_test_cases.md`
   #---------------------------------------------------------------------------
   if (BUILD_TESTS)
   	enable_testing()
