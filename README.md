@@ -54,8 +54,8 @@ Contains:
 * Grading information (`./docs/grading.md`)
 * How to more easily navigate the project's documentation files in vim
   (`./docs/navigating_buffers.md`)
-* Notes and informational resources on all of the topics listed above
-  (`./docs/notes.md`).
+* Links to notes and informational resources on all of the topics listed
+  above (`./docs/README.md`).
 
 ### Source					[`./src`]
 
@@ -63,7 +63,9 @@ Project source files, containing the bulk of `project3`'s implementation.
 
 Contains:
 * Starter files
+	* `./src/Array2D.cpp`
 	* `./src/Array2D.hpp`
+	* `./src/Matrix.cpp`
 	* `./src/Matrix.hpp`
 	* `./src/CMakeLists.txt`
 
@@ -73,6 +75,7 @@ A source file for an executable that runs your code. Not necessarily the same
 as the executable used to grade `project3` submissions.
 
 Contains:
+* `./bin/Helpers.hpp`
 * `./bin/maav-equation-solver.cpp`
 
 ### Tests					[`./tests`]
@@ -90,7 +93,8 @@ Contains:
 Things that trainees might find helpful.
 
 Contains:
-* `./maybe_useful/vimscript.md`
 * `./maybe_useful/functions.vim`
 * `./maybe_useful/install_dependencies.sh`
+* `./maybe_useful/local-vimrc`
 * `./maybe_useful/Makefile`
+* `./maybe_useful/vimscript.md`
