@@ -2,7 +2,7 @@
 
 ## Project-specific
 
-**Project Specification**			-		`./assignment.md`
+**Project Specification**			-		`./README.md`
 
 **Grading**							-		`./grading.md`
 
