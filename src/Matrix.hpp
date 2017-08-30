@@ -243,8 +243,8 @@ public:
 
 	/**
 	 * @brief Return the inverse of this matrix.
-	 * @detail If the matrix is not invertible (i.e. isn't square), throw
-	 * 		an (`std::runtime_error`).
+	 * @detail If the matrix is not invertible (i.e. isn't square, involves
+	 * 		dividing by zero), throw an (`std::runtime_error`).
 	 *
 	 * 		The inverse of the 1x1 matrix...
 	 * 				[x]
