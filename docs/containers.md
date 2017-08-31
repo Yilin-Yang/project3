@@ -18,6 +18,7 @@ we've summarized some important points below.
 * To delete a dynamically-allocated array, you use `delete[]`.
 
 An example of indexing with `operator[]` is shown below.
+
 		int an_array[] = {10, 20, 30, 40};
 		std::cout << an_array[0] << std::endl;	// prints `10`
 		std::cout << an_array[3] << std::endl;	// prints `40`
@@ -28,6 +29,7 @@ An example of indexing with `operator[]` is shown below.
 
 An example of a loop that iterates through a native array using pointer
 arithmetic is shown below:
+
 		int an_array[] = {10, 20, 30, 40};
 		size_t arr_size = 4;
 
@@ -39,7 +41,9 @@ arithmetic is shown below:
 		std::cout << std::endl;
 
 To pass a native array into a function, you would do something like this:
+
 		void printArray(const int* arr, size_t arr_size)
+
 		{
 			for ( ; ptr != arr + arr_size; ++ptr)
 			{
@@ -69,6 +73,7 @@ To pass a native array into a function, you would do something like this:
 		}
 
 You _cannot_ do this:
+
 		size_t arr_size;
 		std::cin >> arr_size;	// ask user for size of array
 		int an_array[arr_size];	// error
@@ -114,6 +119,7 @@ needs to resize; most of the time, you don't have to worry about how this
 happens.
 
 Example Usage:
+
 		// main.cpp
 		#include <iostream>
 		#include <vector>
@@ -176,15 +182,18 @@ Python): given a "word" (a key), a dictionary will give you a "definition"
 (a value).
 
 So if I create a map by doing this:
+
 		std::map<string, int> town_populations;
 		town_populations["Ann Arbor"] = 100000;
 		town_populations["Detroit"] = 6000000;
 
 I could access those values by doing something like this:
+
 		// prints `100000` to stdout
 		std::cout << town_populations["Ann Arbor"] << std::endl;
 
 Example Usage:
+
 		// main.cpp
 		#include <iostream>
 		#include <map>
