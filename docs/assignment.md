@@ -26,12 +26,26 @@ arrays whose size is not necessarily known at compile time.
 See `./dynamic_memory.md` for more information.
 
 
-Figure Out How CMake Works
+Figure Out How Makefiles Work
 --------------------------------------------------------------------------------
+(If you've done work with Makefiles before, you're free to skip this part,
+or just skim through it as a refresher.)
+
 As you've probably come to realize, compiling several C++ source files by
 manually typing in `g++` commands is tedious and error-prone. Makefiles are
-a good solution when working with small projects, but even they aren't
-adequate when working with a large codebase.
+a way to automate that process for smaller projects, like the kind you'll
+work with in EECS280.
+
+See `./makefiles.md` for more information.
+
+
+Figure Out How CMake Works
+--------------------------------------------------------------------------------
+
+Makefiles are a good solution when working with small projects, but even
+they aren't adequate when working with a large codebase. With something as
+large as the MAAV codebase, you need a much more capable build system with
+a greater level of configurability.
 
 CMake is an open-source build system. It has its own scripting language
 that lets you define exactly how you want your project to be compiled
@@ -61,7 +75,6 @@ be implemented-- are given below.
 
 Further detailed infrmation about `Matrix` and `Array2D` is given in the
 `@detail` in their respective header (`hpp`) files.
-
 
 #### Array2D
 `Array2D` "is" a two-dimensional array; it lets its user index into a given cell
