@@ -29,7 +29,7 @@ See `./dynamic_memory.md` for more information.
 Figure Out How Makefiles Work
 --------------------------------------------------------------------------------
 (If you've done work with Makefiles before, you're free to skip this part,
-or just skim through it as a refresher.)
+or to just skim through it as a refresher.)
 
 As you've probably come to realize, compiling several C++ source files by
 manually typing in `g++` commands is tedious and error-prone. Makefiles are
@@ -104,7 +104,7 @@ using `std::array` or `std::vector`). The reasons for this are that it:
 ##### Why not use a native 2D array?
 NOTE: A native 2D array is a native array of pointers to other native
 arrays, such as:
-		int array_2d[2] = {int[2], int[2]};
+        int array_2d[2] = {int[2], int[2]};
 
 The short answer is that "real" two-dimensional arrays are less efficient--in
 memory usage and in execution time--than one-dimensional arrays pretending
@@ -280,55 +280,55 @@ Appendix
 ### How to Throw An `std::runtime_error`
 
 Example Usage:
-		#include <exception>
+        #include <exception>
 
-		//...
+        //...
 
-		double divide(double lhs, double rhs)
-		{
-			if (rhs == 0)
-			{
-				throw std::runtime_error{"Division by zero!"};
-			}
-			return lhs / rhs;
-		}
+        double divide(double lhs, double rhs)
+        {
+            if (rhs == 0)
+            {
+                throw std::runtime_error{"Division by zero!"};
+            }
+            return lhs / rhs;
+        }
 
-		//...
+        //...
 
-		int main()
-		{
-			divide(5.0, 0);
-			std::cout << "Program finished execution." << std::endl;
-			return 0;
-		}
+        int main()
+        {
+            divide(5.0, 0);
+            std::cout << "Program finished execution." << std::endl;
+            return 0;
+        }
 
 Output:
-		terminate called after throwing an instance of 'std::runtime_error'
-		  what():  Division by zero!
-		Aborted (core dumped)
+        terminate called after throwing an instance of 'std::runtime_error'
+          what():  Division by zero!
+        Aborted (core dumped)
 
 ### How to Catch an `std::runtime_error`
 
 Example Usage
-		double divide(double lhs, double rhs)
-		{
-			// same as above
-		}
+        double divide(double lhs, double rhs)
+        {
+            // same as above
+        }
 
-		int main()
-		{
-			try
-			{
-				divide(5.0, 0);
-			}
-			catch (std::runtime_error)
-			{
-				std::cerr << "I dun goofed!\n";
-			}
-			std::cout << "Program finished execution." << std::endl;
-			return 0;
-		}
+        int main()
+        {
+            try
+            {
+                divide(5.0, 0);
+            }
+            catch (std::runtime_error)
+            {
+                std::cerr << "I dun goofed!\n";
+            }
+            std::cout << "Program finished execution." << std::endl;
+            return 0;
+        }
 
 Output:
-		I dun goofed!
-		Program finished execution.
+        I dun goofed!
+        Program finished execution.
